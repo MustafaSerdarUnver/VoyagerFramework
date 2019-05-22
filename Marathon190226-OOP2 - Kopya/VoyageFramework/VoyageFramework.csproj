@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C69F9448-5E49-4DFC-836C-F19489D8E4C6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VoyageFramework</RootNamespace>
+    <AssemblyName>VoyageFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLLUnitOfWork.cs" />
+    <Compile Include="Bus.cs" />
+    <Compile Include="BusExpedition.cs" />
+    <Compile Include="Driver.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Host.cs" />
+    <Compile Include="LuxuryBus.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Route.cs" />
+    <Compile Include="SeatInformation.cs" />
+    <Compile Include="StandartBus.cs" />
+    <Compile Include="Ticket.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Voyage.DAL\Voyage.DAL.csproj">
+      <Project>{FBE18AF4-7C19-4279-9F98-DEA78C700B86}</Project>
+      <Name>Voyage.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Voyage.Entity\Voyage.Entity.csproj">
+      <Project>{F4E62230-8858-45CC-BAAC-502A3017C1A7}</Project>
+      <Name>Voyage.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
